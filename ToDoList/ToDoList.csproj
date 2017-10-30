@@ -153,6 +153,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710301752054_InitialCreate.cs" />
+    <Compile Include="Migrations\201710301752054_InitialCreate.Designer.cs">
+      <DependentUpon>201710301752054_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710301811551_ToDoItemStatus.cs" />
+    <Compile Include="Migrations\201710301811551_ToDoItemStatus.Designer.cs">
+      <DependentUpon>201710301811551_ToDoItemStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ToDoItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -216,6 +225,14 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201710301752054_InitialCreate.resx">
+      <DependentUpon>201710301752054_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710301811551_ToDoItemStatus.resx">
+      <DependentUpon>201710301811551_ToDoItemStatus.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
