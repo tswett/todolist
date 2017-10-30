@@ -9,6 +9,10 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+<p>
+    Will you be able to complete all of these items by their respective deadlines?
+    @ToDoList.Controllers.ToDoController.GetFeasibilityMessage(Model)
+</p>
 <table class="table">
     <tr>
         <th>

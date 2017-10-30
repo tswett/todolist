@@ -20,6 +20,38 @@ namespace ToDoList.Controllers
             return View(db.ToDoItems.ToList());
         }
 
+        // Exposing this method like this doesn't feel like good architecture.
+        // I think my next change would be to create a view model class containing this message.
+        public static string GetFeasibilityMessage(IEnumerable<ToDoItem> allItems)
+        {
+            // Get all items yet to be done, in order of deadline.
+            IEnumerable<ToDoItem> items = allItems
+                .Where(item => item.Status != ToDoItem.ItemStatus.Done)
+                .Where(item => item.Deadline.HasValue)
+                .OrderBy(item => item.Deadline.Value);
+
+            // Assume that we're starting at the current time...
+            DateTime currentTime = DateTime.Now;
+
+            // ...then loop through items, assuming we perform them in order of deadline.
+            foreach (ToDoItem item in items)
+            {
+                currentTime = currentTime.AddDays(item.DaysRequired);
+
+                if (currentTime > item.Deadline.Value)
+                {
+                    return string.Format(
+                        "No, the item \"{0}\" has a deadline of {1}, but will not be completed " +
+                            "until {2}.",
+                        item.Content,
+                        item.Deadline,
+                        currentTime);
+                }
+            }
+
+            return string.Format("Yes, all items will be completed by {0}.", currentTime);
+        }
+
         // GET: ToDo/Details/5
         public ActionResult Details(int? id)
         {
