@@ -161,6 +161,10 @@
     <Compile Include="Migrations\201710301811551_ToDoItemStatus.Designer.cs">
       <DependentUpon>201710301811551_ToDoItemStatus.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710301900166_ToDoItemDeadlines.cs" />
+    <Compile Include="Migrations\201710301900166_ToDoItemDeadlines.Designer.cs">
+      <DependentUpon>201710301900166_ToDoItemDeadlines.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ToDoItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -232,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201710301811551_ToDoItemStatus.resx">
       <DependentUpon>201710301811551_ToDoItemStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710301900166_ToDoItemDeadlines.resx">
+      <DependentUpon>201710301900166_ToDoItemDeadlines.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

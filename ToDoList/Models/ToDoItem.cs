@@ -12,6 +12,8 @@ namespace ToDoList.Models
         public int ID { get; set; }
         public string Content { get; set; }
         public ItemStatus Status { get; set; }
+        public double DaysRequired { get; set; }
+        public DateTime? Deadline { get; set; }
 
         public enum ItemStatus
         {
